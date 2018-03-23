@@ -5,12 +5,11 @@
 
     <section class="coopwith-wrap">
         <header class="coopwith-header">
-            <coopwith-header></coopwith-header>
+            <coopwith-header (toggleSidebar)="sidenav.open()"></coopwith-header>
         </header>
 
         <section class="coopwith-content">
             <main>
-                <button (click)="sidenav.open()">打开侧边栏</button>
             </main>
         </section>
 
