@@ -1,0 +1,17 @@
+html,
+body,
+coopwith-root,
+mat-sidenav-container,
+.coopwith-wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.coopwith-wrap {
+    display: flex;
+    flex-direction: column; // .coopwith-header {}
+    .coopwith-content {
+        flex: 1;
+    } // .coopwith-footer {}
+}
