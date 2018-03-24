@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatIconRegistry } from '@angular/material';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
     selector: 'coopwith-header',
@@ -8,7 +10,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
     @Output() toggleSidebar = new EventEmitter<void>();
-    constructor() { }
+    constructor(
+        private iconRegistry: MatIconRegistry,
+        private sanitizer: DomSanitizer
+    ) {
+        iconRegistry.addSvgIcon('husky', sanitizer.bypassSecurityTrustResourceUrl('assets/common/svg/husky.svg'))
+    }
 
     ngOnInit() {
     }
