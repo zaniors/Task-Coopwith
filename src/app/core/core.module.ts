@@ -6,7 +6,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { UtilsModule } from '../utils/utils.module';
+import { LoadSvgResources } from '../utils/svg.util';
 
 @NgModule({
     imports: [
@@ -14,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http'
         CommonModule,
         MatToolbarModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+
+        UtilsModule
     ],
     declarations: [
         HeaderComponent,
@@ -28,9 +32,14 @@ import { HttpClientModule } from '@angular/common/http'
     ]
 })
 export class CoreModule {
-    constructor(@Optional() @SkipSelf() parent: CoreModule) {
+    constructor(
+        @Optional() @SkipSelf() parent: CoreModule,
+        private loadSvgResources: LoadSvgResources
+    ) {
         if (parent) {
             throw new Error('此模块已存在，不能再次加载！');
         }
+
+        this.loadSvgResources.init();
     }
 }
