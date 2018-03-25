@@ -6,10 +6,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { UtilsModule } from '../utils/utils.module';
 import { LoadSvgResources } from '../utils/svg.util';
 import { AppCommonModule } from '../shared/common/common.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
     imports: [
         HttpClientModule,
+        BrowserAnimationsModule,
         AppCommonModule,
         UtilsModule
     ],
