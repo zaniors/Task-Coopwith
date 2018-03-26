@@ -7,6 +7,11 @@ const routes: Routes = [
         redirectTo: '/login',
         pathMatch: 'full'
     },
+    {
+        path: 'project',
+        loadChildren: 'app/project/project.module#ProjectModule', // Lazy load admin module
+        data: { preload: true }
+    }
 ];
 
 @NgModule({
