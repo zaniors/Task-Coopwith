@@ -1,0 +1,24 @@
+.mat-card {
+    width: 600px; // height: 28em;
+    // flex: 0 0 20em;
+}
+
+form {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-wrap {
+    text-align: right;
+}
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+}
