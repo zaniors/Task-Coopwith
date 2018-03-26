@@ -7,7 +7,6 @@ import { Injectable } from "@angular/core";
 // }
 
 const imgDir = '/assets/common/img';
-const sidebarDir = `${imgDir}/sidebar`;
 
 @Injectable()
 export class LoadSvgResources {
@@ -19,11 +18,22 @@ export class LoadSvgResources {
 
     init(): void {
         this.iconRegistrySidebar(this.sidebarIconArr);
+        this.iconRegistryCurrentDay();
     }
 
+    // 获取sidebar需要的icon，从定义的变量中获取icon文件
     private iconRegistrySidebar(iconArr: string[]): void {
+        const sidebarDir = `${imgDir}/sidebar`;
         iconArr.forEach(iconName => {
             this.iconRegistry.addSvgIcon(iconName, this.sanitizer.bypassSecurityTrustResourceUrl(`${sidebarDir}/${iconName}.svg`));
         });
+    }
+
+    // 获取当月时间，加载对应的号数icon；比如10月10号，对应加载day10.svg
+    private iconRegistryCurrentDay(): void {
+        let day = new Date().getDate();
+        const dayDir = `${imgDir}/days`;
+
+        this.iconRegistry.addSvgIcon(`day${day}`, this.sanitizer.bypassSecurityTrustResourceUrl(`${dayDir}/day${day}.svg`));
     }
 }
