@@ -6,14 +6,24 @@ import { Injectable } from "@angular/core";
 //     ir.addSvgIcon('husky', ds.bypassSecurityTrustResourceUrl('assets/common/svg/husky.svg'))
 // }
 
+const imgDir = '/assets/common/img';
+const sidebarDir = `${imgDir}/sidebar`;
+
 @Injectable()
 export class LoadSvgResources {
+    sidebarIconArr: string[] = ['day', 'week', 'month', 'project', 'projects'];
     constructor(
         private iconRegistry: MatIconRegistry,
         private sanitizer: DomSanitizer
     ) { }
 
     init(): void {
-        this.iconRegistry.addSvgIcon('husky', this.sanitizer.bypassSecurityTrustResourceUrl('assets/common/svg/husky.svg'))
+        this.iconRegistrySidebar(this.sidebarIconArr);
+    }
+
+    private iconRegistrySidebar(iconArr: string[]): void {
+        iconArr.forEach(iconName => {
+            this.iconRegistry.addSvgIcon(iconName, this.sanitizer.bypassSecurityTrustResourceUrl(`${sidebarDir}/${iconName}.svg`));
+        });
     }
 }
