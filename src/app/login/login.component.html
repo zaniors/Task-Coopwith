@@ -1,26 +1,44 @@
 <form>
-    <mat-card>
+    <mat-card class="mat-card">
         <mat-card-header>
             <mat-card-title>登录</mat-card-title>
         </mat-card-header>
-
         <mat-card-content>
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="full-width">
                 <input matInput placeholder="您的email" type="text">
             </mat-form-field>
-            <mat-form-field class="example-full-width">
+            <mat-form-field class="full-width">
                 <input matInput placeholder="您的密码" type="password">
             </mat-form-field>
-            <button mat-raised-button type="button">登录</button>
+            <section class="btn-wrap">
+                <button mat-raised-button type="button">登录</button>
+            </section>
         </mat-card-content>
-
-        <mat-card-actions>
+        <mat-card-actions class="text-right nomargin">
             <p>还没有账户？
                 <a href="">注册</a>
             </p>
             <p>忘记密码？
                 <a href="">找回</a>
             </p>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="mat-card">
+        <mat-card-header>
+            <div mat-card-avatar class="header-image"></div>
+            <mat-card-title>每日佳句</mat-card-title>
+            <mat-card-subtitle>满足感在于不断的努力，而不是现有成就，全心努力定会胜利满满。</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="/assets/common/img/quote_fallback.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <p>
+                Satisfaction lies in the constant effort, not the present achievement, and the full effort will surely lead to victory.
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button type="button">LIKE</button>
+            <button mat-button type="button">SHARE</button>
         </mat-card-actions>
     </mat-card>
 </form>
