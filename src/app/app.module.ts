@@ -6,7 +6,7 @@ import { CoreModule } from './core/core.module';
 
 import { AppRoutes } from './app.routing';
 import { AppCommonModule } from './shared/common/common.module';
-import { LoginModule } from './login/login.module';
+import { LoginModule } from './auth/auth.module';
 
 @NgModule({
     declarations: [
