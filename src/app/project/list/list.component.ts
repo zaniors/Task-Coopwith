@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { NewProjectComponent } from '../new/new.component';
 
 @Component({
     selector: 'coopwith-list',
@@ -8,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
 
     projects: any[] = [];
-    constructor() { }
+    constructor(
+        private matDialog: MatDialog
+    ) { }
 
     ngOnInit() {
         this.projects[0] = {
@@ -19,6 +23,7 @@ export class ListComponent implements OnInit {
     }
 
     openNewProjectDialog(): void {
-
+        this.matDialog.open(NewProjectComponent, {
+        })
     }
 }
