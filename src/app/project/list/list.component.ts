@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { NewProjectComponent } from '../new/new.component';
+import { ProjectItem } from '../../shared/interface/projects.model';
 
 @Component({
     selector: 'coopwith-list',
@@ -23,7 +24,18 @@ export class ListComponent implements OnInit {
     }
 
     openNewProjectDialog(): void {
-        this.matDialog.open(NewProjectComponent, {
-        })
+        let dialogRef = this.matDialog.open(NewProjectComponent, {
+            data: '没错，我就是dialog！'
+        });
+
+        dialogRef
+            .afterClosed()
+            .subscribe((result: ProjectItem) => {
+                console.log(result);
+                if (!(result.coverImg && result.desc && result.name)) {
+                    return;
+                }
+                this.projects.push(result);
+            })
     }
 }
