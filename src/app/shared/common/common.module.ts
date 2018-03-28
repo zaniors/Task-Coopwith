@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatSidenavModule, MatInputModule, MatListModule, MatGridListModule, MatDialogModule } from "@angular/material";
+import { MatToolbarModule, MatIconModule, MatButtonModule, MatCardModule, MatSidenavModule, MatInputModule, MatListModule, MatGridListModule, MatDialogModule, MatAutocompleteModule } from "@angular/material";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
@@ -15,7 +15,8 @@ import { FormsModule } from "@angular/forms";
         MatInputModule,
         MatListModule,
         MatGridListModule,
-        MatDialogModule
+        MatDialogModule,
+        MatAutocompleteModule,
     ],
     declarations: [
     ],
@@ -31,6 +32,7 @@ import { FormsModule } from "@angular/forms";
         MatListModule,
         MatGridListModule,
         MatDialogModule,
+        MatAutocompleteModule,
 
     ]
 })

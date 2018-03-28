@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { NewProjectComponent } from '../new/new.component';
 import { ProjectItem } from '../../shared/interface/projects.model';
+import { InviteComponent } from '../invite/invite.component';
 
 @Component({
     selector: 'coopwith-list',
@@ -37,5 +38,11 @@ export class ListComponent implements OnInit {
                 }
                 this.projects.push(result);
             })
+    }
+
+    toJoinProject(): void {
+        let dialogRef = this.matDialog.open(InviteComponent, {
+            data: '加入项目！'
+        });
     }
 }

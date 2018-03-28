@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { MatDialog } from '@angular/material';
 
 @Component({
     selector: 'coopwith-project-item',
@@ -7,9 +8,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
     @Input() item: any;
-    constructor() { }
+    @Output() inviteHandle = new EventEmitter<void>();
+    constructor(
+        private matDialog: MatDialog
+    ) { }
 
     ngOnInit() {
     }
 
+    onInviteClick(): void {
+        this.inviteHandle.emit();
+    }
 }
