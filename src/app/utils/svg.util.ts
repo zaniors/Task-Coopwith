@@ -6,25 +6,28 @@ const imgDir = '/assets/common/img';
 const sidebarDir = `${imgDir}/sidebar`;
 const dayDir = `${imgDir}/days`;
 const avatarsDir = `${imgDir}/avatar`;
+const iconsDir = `${imgDir}/icons`
 
 @Injectable()
 export class LoadSvgResources {
     sidebarIconArr: string[] = ['day', 'week', 'month', 'project', 'projects'];
+    otherIconArr: string[] = ['add', 'move', 'delete', 'hand-grab-o', 'burger-navigation'];
     constructor(
         private iconRegistry: MatIconRegistry,
         private sanitizer: DomSanitizer
     ) { }
 
     init(): void {
-        this.iconRegistrySidebar(this.sidebarIconArr);
+        this.iconsRegistry(sidebarDir, this.sidebarIconArr);
+        this.iconsRegistry(iconsDir, this.otherIconArr);
         this.iconListRegister();
         this.iconRegistryCurrentDay();
     }
 
-    // 加载sidebar的icon，从定义的变量中获取icon文件
-    private iconRegistrySidebar(iconArr: string[]): void {
+    // 加载多个icon，从定义的变量中获取icon文件
+    private iconsRegistry(dir: string, iconArr: string[]): void {
         iconArr.forEach(iconName => {
-            this.iconRegistry.addSvgIcon(iconName, this.sanitizer.bypassSecurityTrustResourceUrl(`${sidebarDir}/${iconName}.svg`));
+            this.iconRegistry.addSvgIcon(iconName, this.sanitizer.bypassSecurityTrustResourceUrl(`${dir}/${iconName}.svg`));
         });
     }
 

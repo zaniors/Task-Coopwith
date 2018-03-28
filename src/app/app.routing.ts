@@ -11,6 +11,11 @@ const routes: Routes = [
         path: 'project',
         loadChildren: 'app/project/project.module#ProjectModule', // Lazy load admin module
         data: { preload: true }
+    },
+    {
+        path: 'task',
+        loadChildren: 'app/task/task.module#TaskModule', // Lazy load admin module
+        data: { preload: true }
     }
 ];
 

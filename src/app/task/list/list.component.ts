@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'coopwith-list',
+    selector: 'coopwith-task-list',
     templateUrl: './list.component.html',
     styleUrls: ['./list.component.scss']
 })

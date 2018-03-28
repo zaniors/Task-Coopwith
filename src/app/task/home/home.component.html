@@ -1,3 +1,10 @@
-<p>
-  home works!
-</p>
+<section class="task-lists">
+    <coopwith-task-list *ngFor="let listItem of taskListsData" class="list-container">
+        <coopwith-task-header [headerTitle]="listItem.name"></coopwith-task-header>
+        <coopwith-task-item *ngFor="let taskItem of listItem.tasks"></coopwith-task-item>
+    </coopwith-task-list>
+</section>
+
+<button type="button" class="fab-button" mat-fab (click)="openNewTaskDialog()">
+    <mat-icon>add</mat-icon>
+</button>

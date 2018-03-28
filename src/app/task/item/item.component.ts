@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'coopwith-item',
+    selector: 'coopwith-task-item',
     templateUrl: './item.component.html',
     styleUrls: ['./item.component.scss']
 })
