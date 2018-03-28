@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'coopwith-task-item',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./item.component.scss']
 })
 export class TaskItemComponent implements OnInit {
-
+    @Input() taskItemData;
+    avatar: string;
     constructor() { }
 
     ngOnInit() {
+        this.avatar = this.taskItemData.owner ? this.taskItemData.owner.avatar : 'unassigned';
     }
 
 }

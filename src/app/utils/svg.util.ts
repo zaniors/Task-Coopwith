@@ -12,6 +12,7 @@ const iconsDir = `${imgDir}/icons`
 export class LoadSvgResources {
     sidebarIconArr: string[] = ['day', 'week', 'month', 'project', 'projects'];
     otherIconArr: string[] = ['add', 'move', 'delete', 'hand-grab-o', 'burger-navigation'];
+    avatarIconArr: string[] = ['unassigned'];
     constructor(
         private iconRegistry: MatIconRegistry,
         private sanitizer: DomSanitizer
@@ -20,6 +21,7 @@ export class LoadSvgResources {
     init(): void {
         this.iconsRegistry(sidebarDir, this.sidebarIconArr);
         this.iconsRegistry(iconsDir, this.otherIconArr);
+        this.iconsRegistry(avatarsDir, this.avatarIconArr);
         this.iconListRegister();
         this.iconRegistryCurrentDay();
     }

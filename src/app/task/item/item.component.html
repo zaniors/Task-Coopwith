@@ -1,3 +1,11 @@
-<p>
-  item works!
-</p>
+<mat-list-item class="container">
+    <mat-checkbox [checked]="taskItemData.completed" class="completion-status"></mat-checkbox>
+    <section class="content" mat-line>
+        <span [matTooltip]="taskItemData.desc">{{ taskItemData.desc }}</span>
+    </section>
+    <section class="bottom-bar" mat-line>
+        <span class="due-date" *ngIf="taskItemData.dueDate">{{ taskItemData.dueDate | date: 'yyyy-MM-dd' }}</span>
+        <mat-icon class="alarm" *ngIf="taskItemData.dueDate">alarm</mat-icon>
+    </section>
+    <mat-icon class="avatar" [svgIcon]="avatar" mat-list-avatar></mat-icon>
+</mat-list-item>
