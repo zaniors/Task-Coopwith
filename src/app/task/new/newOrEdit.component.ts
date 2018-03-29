@@ -2,11 +2,11 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
-    selector: 'coopwith-new-task',
-    templateUrl: './new.component.html',
-    styleUrls: ['./new.component.scss']
+    selector: 'coopwith-new-or-edit-task',
+    templateUrl: './newOrEdit.component.html',
+    styleUrls: ['./newOrEdit.component.scss']
 })
-export class NewTaskComponent implements OnInit {
+export class NewOrEditTaskComponent implements OnInit {
     priorities = [
         {
             label: "紧急",
@@ -23,7 +23,7 @@ export class NewTaskComponent implements OnInit {
     ];
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: any,
-        public dialogRef: MatDialogRef<NewTaskComponent>
+        public dialogRef: MatDialogRef<NewOrEditTaskComponent>
     ) { }
 
     ngOnInit() {

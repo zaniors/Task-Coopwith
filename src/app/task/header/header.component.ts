@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { NewTaskComponent } from '../new/new.component';
+import { MoveTaskComponent } from '../move/move.component';
+import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
 
 @Component({
     selector: 'coopwith-task-header',
@@ -8,7 +9,8 @@ import { NewTaskComponent } from '../new/new.component';
     styleUrls: ['./header.component.scss']
 })
 export class TaskHeaderComponent implements OnInit {
-    @Input() headerTitle = '';
+    @Input() taskListsItemData;
+    @Input() taskListsData;
     constructor(
         private matDialog: MatDialog
     ) { }
@@ -17,8 +19,14 @@ export class TaskHeaderComponent implements OnInit {
     }
 
     openNewTaskDialog(): void {
-        let dialogRef = this.matDialog.open(NewTaskComponent, {
+        let dialogRef = this.matDialog.open(NewOrEditTaskComponent, {
             data: '没错，我就是新建任务！'
+        });
+    }
+
+    moveTaskDialog(): void {
+        let dialogRef = this.matDialog.open(MoveTaskComponent, {
+            data: this.taskListsData
         });
     }
 

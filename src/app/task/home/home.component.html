@@ -1,6 +1,6 @@
 <section class="task-lists">
     <coopwith-task-list *ngFor="let listItem of taskListsData" class="list-container">
-        <coopwith-task-header [headerTitle]="listItem.name"></coopwith-task-header>
+        <coopwith-task-header [taskListsItemData]="listItem" [taskListsData]="taskListsData"></coopwith-task-header>
         <coopwith-task-item *ngFor="let taskItem of listItem.tasks" [taskItemData]="taskItem"></coopwith-task-item>
     </coopwith-task-list>
 </section>
