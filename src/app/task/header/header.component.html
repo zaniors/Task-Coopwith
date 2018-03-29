@@ -3,7 +3,7 @@
         <h3>{{ headerTitle }}</h3>
     </section>
     <section class="fill">
-        <button mat-button>
+        <button mat-button (click)="openNewTaskDialog()">
             <mat-icon>add_circle-outline</mat-icon>
             <span>新任务</span>
         </button>

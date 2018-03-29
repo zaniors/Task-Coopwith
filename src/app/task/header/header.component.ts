@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { NewTaskComponent } from '../new/new.component';
 
 @Component({
     selector: 'coopwith-task-header',
@@ -7,9 +9,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TaskHeaderComponent implements OnInit {
     @Input() headerTitle = '';
-    constructor() { }
+    constructor(
+        private matDialog: MatDialog
+    ) { }
 
     ngOnInit() {
+    }
+
+    openNewTaskDialog(): void {
+        let dialogRef = this.matDialog.open(NewTaskComponent, {
+            data: '没错，我就是新建任务！'
+        });
     }
 
 }

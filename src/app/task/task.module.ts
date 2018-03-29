@@ -5,6 +5,7 @@ import { TaskListComponent } from './list/list.component';
 import { TaskItemComponent } from './item/item.component';
 import { TaskRoutes } from './task.routing';
 import { AppCommonModule } from '../shared/common/common.module';
+import { NewTaskComponent } from './new/new.component';
 
 @NgModule({
     imports: [
@@ -16,8 +17,10 @@ import { AppCommonModule } from '../shared/common/common.module';
         TaskHeaderComponent,
         TaskListComponent,
         TaskItemComponent,
+        NewTaskComponent
     ],
     entryComponents: [
+        NewTaskComponent
     ]
 })
 export class TaskModule { }

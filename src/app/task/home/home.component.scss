@@ -6,9 +6,9 @@
     flex-wrap: nowrap;
     overflow: scroll;
     .list-container {
-        flex: 0 0 360px;
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
+        border-right: 2px solid #f0f0f0;
     }
 }
 
