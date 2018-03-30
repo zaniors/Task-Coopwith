@@ -7,11 +7,11 @@ import { ProjectItem } from '../../shared/interface/projects.model';
     templateUrl: './new.component.html',
     styleUrls: ['./new.component.scss']
 })
-export class NewProjectComponent implements OnInit {
+export class NewOrEditProjectComponent implements OnInit {
     newProjectItem: ProjectItem = new ProjectItem();
     constructor(
         @Inject(MAT_DIALOG_DATA) public data: any,
-        public dialogRef: MatDialogRef<NewProjectComponent>
+        public dialogRef: MatDialogRef<NewOrEditProjectComponent>
     ) { }
 
     ngOnInit() {

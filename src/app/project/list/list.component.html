@@ -1,4 +1,5 @@
-<coopwith-project-item class="card" *ngFor="let project of projects" [item]="project" (inviteHandle)="toJoinProject()"></coopwith-project-item>
-<button mat-fab type="button" (click)="openNewProjectDialog()" class="fab-button">
+<coopwith-project-item class="card" *ngFor="let project of projects" [item]="project" (inviteProjectHandle)="toJoinProject()"
+    (newOrEditProjectHandle)="openNewOrEditProjectDialog()"></coopwith-project-item>
+<button mat-fab type="button" (click)="openNewOrEditProjectDialog()" class="fab-button">
     <mat-icon>add</mat-icon>
 </button>

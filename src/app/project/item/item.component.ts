@@ -8,7 +8,8 @@ import { MatDialog } from '@angular/material';
 })
 export class ItemComponent implements OnInit {
     @Input() item: any;
-    @Output() inviteHandle = new EventEmitter<void>();
+    @Output() inviteProjectHandle = new EventEmitter<void>();
+    @Output() newOrEditProjectHandle = new EventEmitter<void>();
     constructor(
         private matDialog: MatDialog
     ) { }
@@ -16,7 +17,11 @@ export class ItemComponent implements OnInit {
     ngOnInit() {
     }
 
-    onInviteClick(): void {
-        this.inviteHandle.emit();
+    onInviteProject(): void {
+        this.inviteProjectHandle.emit();
+    }
+
+    onNewOrEditProject(): void {
+        this.newOrEditProjectHandle.emit();
     }
 }

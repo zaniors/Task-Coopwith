@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { NewProjectComponent } from '../new/new.component';
+import { NewOrEditProjectComponent } from '../new/new.component';
 import { ProjectItem } from '../../shared/interface/projects.model';
 import { InviteComponent } from '../invite/invite.component';
 
@@ -24,8 +24,8 @@ export class ListComponent implements OnInit {
         }
     }
 
-    openNewProjectDialog(): void {
-        let dialogRef = this.matDialog.open(NewProjectComponent, {
+    openNewOrEditProjectDialog(): void {
+        let dialogRef = this.matDialog.open(NewOrEditProjectComponent, {
             data: '没错，我就是dialog！'
         });
 
