@@ -1,9 +1,9 @@
 <section mat-subheader class="header-container">
     <section>
-        <h3>{{ taskListsItemData.name }}</h3>
+        <h3>{{ headerTaskTitle }}</h3>
     </section>
     <section class="fill">
-        <button mat-button (click)="openNewTaskDialog()">
+        <button mat-button (click)="onNewTask()">
             <mat-icon>add_circle-outline</mat-icon>
             <span>新任务</span>
         </button>
@@ -17,7 +17,7 @@
         <mat-icon>mode_edit</mat-icon>
         <span>修改列表名称</span>
     </button>
-    <button mat-menu-item (click)="moveTaskDialog()">
+    <button mat-menu-item (click)="onMoveTask()">
         <mat-icon svgIcon="move" style="line-height: 1;"></mat-icon>
         <span>移动本列表所有内容</span>
     </button>

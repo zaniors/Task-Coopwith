@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MoveTaskComponent } from '../move/move.component';
 import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
@@ -9,8 +9,9 @@ import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
     styleUrls: ['./header.component.scss']
 })
 export class TaskHeaderComponent implements OnInit {
-    @Input() taskListsItemData;
-    @Input() taskListsData;
+    @Output() onMoveTaskHandle = new EventEmitter<void>();
+    @Output() onNewOrEditTaskHandle = new EventEmitter<void>();
+    @Input() headerTaskTitle = '';
     constructor(
         private matDialog: MatDialog
     ) { }
@@ -18,16 +19,11 @@ export class TaskHeaderComponent implements OnInit {
     ngOnInit() {
     }
 
-    openNewTaskDialog(): void {
-        let dialogRef = this.matDialog.open(NewOrEditTaskComponent, {
-            data: '没错，我就是新建任务！'
-        });
+    onMoveTask(): void {
+        this.onMoveTaskHandle.emit();
     }
 
-    moveTaskDialog(): void {
-        let dialogRef = this.matDialog.open(MoveTaskComponent, {
-            data: this.taskListsData
-        });
+    onNewTask(): void {
+        this.onNewOrEditTaskHandle.emit();
     }
-
 }

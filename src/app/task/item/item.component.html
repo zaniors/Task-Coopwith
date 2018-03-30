@@ -1,5 +1,5 @@
 <mat-list-item class="container">
-    <mat-checkbox [checked]="taskItemData.completed" class="completion-status"></mat-checkbox>
+    <mat-checkbox class="completion-status" [checked]="taskItemData.completed" (click)="ev = $event; ev.stopPropagation()"></mat-checkbox>
     <section class="content" mat-line>
         <span [matTooltip]="taskItemData.desc">{{ taskItemData.desc }}</span>
     </section>

@@ -1,8 +1,8 @@
 <form>
-    <h2 mat-dialog-title>新建任务</h2>
+    <h2 mat-dialog-title>{{ taskItemData ? '编辑任务' : '新建任务' }}</h2>
     <section mat-dialog-content>
         <mat-form-field class="full-width">
-            <input matInput placeholder="任务内容" type="text">
+            <input matInput name="taskItemDesc" placeholder="任务内容" type="text" [(ngModel)]="taskItemData.desc">
         </mat-form-field>
 
         <mat-radio-group>
@@ -12,7 +12,7 @@
         </mat-radio-group>
 
         <mat-form-field class="full-width">
-            <input matInput [matDatepicker]="taskStartDate" placeholder="任务截止日期">
+            <input matInput name="taskStartDate" [matDatepicker]="taskStartDate" placeholder="任务截止日期" [(ngModel)]="taskItemData.dueDate">
             <mat-datepicker-toggle matSuffix [for]="taskStartDate"></mat-datepicker-toggle>
             <mat-datepicker #taskStartDate></mat-datepicker>
         </mat-form-field>

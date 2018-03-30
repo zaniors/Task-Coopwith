@@ -22,12 +22,12 @@ export class NewOrEditTaskComponent implements OnInit {
         }
     ];
     constructor(
-        @Inject(MAT_DIALOG_DATA) public data: any,
+        @Inject(MAT_DIALOG_DATA) public taskItemData: any,
         public dialogRef: MatDialogRef<NewOrEditTaskComponent>
     ) { }
 
     ngOnInit() {
-        console.log(this.data);
+        console.log(this.taskItemData);
     }
 
 }
