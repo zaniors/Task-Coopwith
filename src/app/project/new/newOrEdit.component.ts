@@ -4,8 +4,8 @@ import { ProjectItem } from '../../shared/interface/projects.model';
 
 @Component({
     selector: 'coopwith-new',
-    templateUrl: './new.component.html',
-    styleUrls: ['./new.component.scss']
+    templateUrl: './newOrEdit.component.html',
+    styleUrls: ['./newOrEdit.component.scss']
 })
 export class NewOrEditProjectComponent implements OnInit {
     newProjectItem: ProjectItem = new ProjectItem();

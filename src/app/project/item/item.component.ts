@@ -21,7 +21,8 @@ export class ItemComponent implements OnInit {
         this.inviteProjectHandle.emit();
     }
 
-    onNewOrEditProject(): void {
+    onEditProject(): void {
+
         this.newOrEditProjectHandle.emit();
     }
 }
