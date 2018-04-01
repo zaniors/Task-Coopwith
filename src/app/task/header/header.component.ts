@@ -2,6 +2,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MoveTaskComponent } from '../move/move.component';
 import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
+import { ConfirmDialogComponent } from '../../shared/common/confirm-dialog/confirm-dialog.component';
 
 @Component({
     selector: 'coopwith-task-header',
@@ -25,5 +26,15 @@ export class TaskHeaderComponent implements OnInit {
 
     onNewTask(): void {
         this.onNewOrEditTaskHandle.emit();
+    }
+
+    onRemoveTask(): void {
+        let dialogRef = this.matDialog.open(ConfirmDialogComponent, {
+            data: { title: '删除任务：', content: '您确认删除该任务吗？' }
+        });
+
+        dialogRef.afterClosed().subscribe((result: boolean) => {
+            console.log(result);
+        })
     }
 }

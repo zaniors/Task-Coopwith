@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
+import { ConfirmDialogComponent } from '../../shared/common/confirm-dialog/confirm-dialog.component';
 
 @Component({
     selector: 'coopwith-project-item',
@@ -22,7 +23,16 @@ export class ItemComponent implements OnInit {
     }
 
     onEditProject(): void {
-
         this.newOrEditProjectHandle.emit();
+    }
+
+    onRemoveProject(): void {
+        let dialogRef = this.matDialog.open(ConfirmDialogComponent, {
+            data: { title: '删除项目：', content: '您确认删除该项目吗？' }
+        });
+
+        dialogRef.afterClosed().subscribe((result: boolean) => {
+            console.log(result);
+        })
     }
 }
