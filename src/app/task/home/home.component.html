@@ -1,11 +1,12 @@
 <section class="task-lists">
     <coopwith-task-list *ngFor="let listItem of taskListsData" class="list-container">
-        <coopwith-task-header [headerTaskTitle]="listItem.name" (onMoveTaskHandle)="moveTaskDialog()" (onNewOrEditTaskHandle)="openNewOrEditTaskDialog(undefined)">
+        <coopwith-task-header [headerTaskTitle]="listItem.name" (onMoveTaskHandle)="moveTaskDialog()" (onNewOrEditTaskHandle)="openNewOrEditTaskDialog(undefined)"
+            (onNewOrEditTaskListHandle)="openNewOrEditTaskListDialog()">
         </coopwith-task-header>
         <coopwith-task-item *ngFor="let taskItem of listItem.tasks" [taskItemData]="taskItem" (click)="openNewOrEditTaskDialog(taskItem)"></coopwith-task-item>
     </coopwith-task-list>
 </section>
 
-<button type="button" class="fab-button" mat-fab (click)="openNewTaskDialog()">
+<button type="button" class="fab-button" mat-fab (click)="openNewOrEditTaskListDialog()">
     <mat-icon>add</mat-icon>
 </button>

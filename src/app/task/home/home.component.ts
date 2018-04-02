@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MoveTaskComponent } from '../move/move.component';
 import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
+import { NewOrEditTaskListComponent } from '../list/newOrEdit/newOrEdit.component';
 
 @Component({
     selector: 'coopwith-task-home',
@@ -75,5 +76,12 @@ export class TaskHomeComponent implements OnInit {
         let dialogRef = this.matDialog.open(NewOrEditTaskComponent, {
             data: data
         });
+    }
+
+    // 新建任务列表和编辑任务列表
+    openNewOrEditTaskListDialog(): void {
+        let dialogRef = this.matDialog.open(NewOrEditTaskListComponent, {
+
+        })
     }
 }

@@ -1,0 +1,13 @@
+<form>
+    <h2 mat-dialog-title>新建任务列表</h2>
+    <section mat-dialog-content>
+        <mat-form-field class="full-width">
+            <input matInput placeholder="列表名称" type="text" name="TaskListName">
+        </mat-form-field>
+    </section>
+
+    <section mat-dialog-actions>
+        <button type="button" mat-raised-button color="primary" (click)="onSave()">保存</button>
+        <button type="button" mat-button mat-dialog-close>取消</button>
+    </section>
+</form>

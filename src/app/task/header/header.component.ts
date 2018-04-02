@@ -12,6 +12,7 @@ import { ConfirmDialogComponent } from '../../shared/common/confirm-dialog/confi
 export class TaskHeaderComponent implements OnInit {
     @Output() onMoveTaskHandle = new EventEmitter<void>();
     @Output() onNewOrEditTaskHandle = new EventEmitter<void>();
+    @Output() onNewOrEditTaskListHandle = new EventEmitter<void>();
     @Input() headerTaskTitle = '';
     constructor(
         private matDialog: MatDialog
@@ -26,6 +27,10 @@ export class TaskHeaderComponent implements OnInit {
 
     onNewTask(): void {
         this.onNewOrEditTaskHandle.emit();
+    }
+
+    onEditTaskList(): void {
+        this.onNewOrEditTaskListHandle.emit();
     }
 
     onRemoveTask(): void {
