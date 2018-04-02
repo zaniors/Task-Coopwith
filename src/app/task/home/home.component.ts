@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MoveTaskComponent } from '../move/move.component';
 import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
 import { NewOrEditTaskListComponent } from '../list/newOrEdit/newOrEdit.component';
+import { slideToRight } from '../../shared/animate/routerTransition';
 
 @Component({
     selector: 'coopwith-task-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    styleUrls: ['./home.component.scss'],
+    animations: [slideToRight()]
 })
 export class TaskHomeComponent implements OnInit {
     taskListsData = [
@@ -66,6 +68,7 @@ export class TaskHomeComponent implements OnInit {
 
     ngOnInit() {
     }
+    @HostBinding('@routerTransition') state;
 
     moveTaskDialog(): void {
         let dialogRef = this.matDialog.open(MoveTaskComponent, {

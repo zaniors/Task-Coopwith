@@ -7,6 +7,7 @@ import { UtilsModule } from '../utils/utils.module';
 import { LoadSvgResources } from '../utils/svg.util';
 import { AppCommonModule } from '../shared/common/common.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutes } from '../app.routing';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         HttpClientModule,
         BrowserAnimationsModule,
         AppCommonModule,
-        UtilsModule
+        UtilsModule,
+        AppRoutes,
     ],
     declarations: [
         HeaderComponent,
@@ -24,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     exports: [
         HeaderComponent,
         FooterComponent,
-        SidebarComponent
+        SidebarComponent,
+        AppRoutes,
     ]
 })
 export class CoreModule {

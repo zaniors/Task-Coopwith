@@ -12,6 +12,7 @@ mat-sidenav-container,
     display: flex;
     flex-direction: column; // .coopwith-header {}
     .coopwith-content {
+        transform: translate(0, 0);
         flex: 1;
     } // .coopwith-footer {}
 }

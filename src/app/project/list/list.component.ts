@@ -1,13 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { ProjectItem } from '../../shared/interface/projects.model';
 import { InviteComponent } from '../invite/invite.component';
 import { NewOrEditProjectComponent } from '../new/newOrEdit.component';
+import { slideToRight } from '../../shared/animate/routerTransition';
 
 @Component({
     selector: 'coopwith-list',
     templateUrl: './list.component.html',
-    styleUrls: ['./list.component.scss']
+    styleUrls: ['./list.component.scss'],
+    animations: [slideToRight()]
 })
 export class ListComponent implements OnInit {
 
@@ -23,6 +25,8 @@ export class ListComponent implements OnInit {
             desc: "这只是一个简单的项目描述而已..."
         }
     }
+
+    @HostBinding('@routerTransition') state;
 
     openNewOrEditProjectDialog(): void {
         let dialogRef = this.matDialog.open(NewOrEditProjectComponent, {
