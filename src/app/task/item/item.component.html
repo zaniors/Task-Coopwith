@@ -1,4 +1,5 @@
-<mat-list-item class="container">
+<mat-list-item class="container" [@taskItemAni]="taskItemAniState" [ngClass]="{'priority-normal': taskItemData.priority === 1, 'priority-important': taskItemData.priority === 2, 'priority-emergency': taskItemData.priority === 3}">
+    <!-- <mat-list-item class="container" [@taskItemAni]="taskItemAniState"> -->
     <mat-checkbox class="completion-status" [checked]="taskItemData.completed" (click)="ev = $event; ev.stopPropagation()"></mat-checkbox>
     <section class="content" mat-line>
         <span [matTooltip]="taskItemData.desc">{{ taskItemData.desc }}</span>

@@ -1,5 +1,14 @@
 :host {
     width: 100%;
+    .priority-normal {
+        border-left: 3px solid #A6A6A6;
+    }
+    .priority-important {
+        border-left: 3px solid #FFAf38;
+    }
+    .priority-emergency {
+        border-left: 3px solid red;
+    }
     .container {
         width: 100%;
         border-radius: 3px;
