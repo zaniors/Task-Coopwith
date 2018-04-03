@@ -1,5 +1,7 @@
 <section class="task-lists">
-    <coopwith-task-list *ngFor="let listItem of taskListsData" class="list-container">
+    <coopwith-task-list *ngFor="let listItem of taskListsData" class="list-container" droppable [dropTags]="['task-list', 'task-item']"
+        [dropEnterClass]="'drag-enter'" [draggable]="true" [draggedClass]="'drag-start'" [dragTag]="'task-list'" [dragData]="listItem"
+        (dropped)="handleMove($event, listItem)">
         <coopwith-task-header [headerTaskTitle]="listItem.name" (onMoveTaskHandle)="moveTaskDialog()" (onNewOrEditTaskHandle)="openNewOrEditTaskDialog(undefined)"
             (onNewOrEditTaskListHandle)="openNewOrEditTaskListDialog()">
         </coopwith-task-header>

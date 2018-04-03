@@ -8,7 +8,7 @@ import { LoadSvgResources } from '../utils/svg.util';
 import { AppCommonModule } from '../shared/common/common.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutes } from '../app.routing';
-
+import 'rxjs/add/operator/take';
 
 @NgModule({
     imports: [

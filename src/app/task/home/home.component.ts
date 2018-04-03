@@ -90,4 +90,10 @@ export class TaskHomeComponent implements OnInit {
 
         })
     }
+
+    handleMove(srcData, listItem) {
+        console.log(srcData);
+        console.log(listItem);
+
+    }
 }
