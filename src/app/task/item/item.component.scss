@@ -9,6 +9,10 @@
     .priority-emergency {
         border-left: 3px solid red;
     }
+    .drag-start {
+        border: #FF535b dashed 2px;
+        border-left-width: 2px !important; //覆盖上面priority样式
+    }
     .container {
         width: 100%;
         border-radius: 3px;
