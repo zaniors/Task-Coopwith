@@ -6,8 +6,9 @@ import { TaskItemComponent } from './item/item.component';
 import { TaskRoutes } from './task.routing';
 import { AppCommonModule } from '../shared/common/common.module';
 import { MoveTaskComponent } from './move/move.component';
-import { NewOrEditTaskComponent } from './new/newOrEdit.component';
-import { NewOrEditTaskListComponent } from './list/newOrEdit/newOrEdit.component';
+import { NewOrEditTaskComponent } from './new-item/newOrEdit.component';
+import { NewOrEditTaskListComponent } from './new-list/newOrEdit.component';
+import { QuickItemComponent } from './quick-item/quick-item.component';
 
 @NgModule({
     imports: [
@@ -19,13 +20,14 @@ import { NewOrEditTaskListComponent } from './list/newOrEdit/newOrEdit.component
         TaskHeaderComponent,
         TaskListComponent,
         TaskItemComponent,
-        NewOrEditTaskComponent,
         MoveTaskComponent,
-        NewOrEditTaskListComponent
-    ],
-    entryComponents: [
-        NewOrEditTaskListComponent,
         NewOrEditTaskComponent,
+        NewOrEditTaskListComponent,
+    QuickItemComponent
+],
+    entryComponents: [
+        NewOrEditTaskComponent,
+        NewOrEditTaskListComponent,
         MoveTaskComponent
     ]
 })

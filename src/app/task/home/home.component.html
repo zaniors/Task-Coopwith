@@ -5,6 +5,7 @@
         <coopwith-task-header [headerTaskTitle]="listItem.name" (onMoveTaskHandle)="moveTaskDialog()" (onNewOrEditTaskHandle)="openNewOrEditTaskDialog(undefined)"
             (onNewOrEditTaskListHandle)="openNewOrEditTaskListDialog()">
         </coopwith-task-header>
+        <coopwith-quick-item (quickTaskItemHandle)="onQuickTaskItem($event)"></coopwith-quick-item>
         <coopwith-task-item *ngFor="let taskItem of listItem.tasks" [taskItemData]="taskItem" (click)="openNewOrEditTaskDialog(taskItem)"></coopwith-task-item>
     </coopwith-task-list>
 </section>

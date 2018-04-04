@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MoveTaskComponent } from '../move/move.component';
-import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
 import { ConfirmDialogComponent } from '../../shared/common/confirm-dialog/confirm-dialog.component';
 
 @Component({

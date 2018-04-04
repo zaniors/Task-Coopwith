@@ -1,9 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { MoveTaskComponent } from '../move/move.component';
-import { NewOrEditTaskComponent } from '../new/newOrEdit.component';
-import { NewOrEditTaskListComponent } from '../list/newOrEdit/newOrEdit.component';
 import { slideToRight } from '../../shared/animate/routerTransition';
+import { NewOrEditTaskComponent } from '../new-item/newOrEdit.component';
+import { NewOrEditTaskListComponent } from '../new-list/newOrEdit.component';
 
 @Component({
     selector: 'coopwith-task-home',
@@ -107,5 +107,9 @@ export class TaskHomeComponent implements OnInit {
             default:
                 break;
         }
+    }
+
+    onQuickTaskItem(desc: string): void {
+        console.log(desc);
     }
 }
