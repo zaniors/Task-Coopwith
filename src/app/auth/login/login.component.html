@@ -24,17 +24,14 @@
         </mat-card-actions>
     </mat-card>
 
-    <mat-card class="mat-card">
+    <mat-card class="mat-card" *ngIf="quoteData">
         <mat-card-header>
-            <div mat-card-avatar class="header-image"></div>
             <mat-card-title>每日佳句</mat-card-title>
-            <mat-card-subtitle>满足感在于不断的努力，而不是现有成就，全心努力定会胜利满满。</mat-card-subtitle>
+            <mat-card-subtitle>{{ quoteData.zh }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="/assets/common/img/quote_fallback.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image [src]="quoteData.picUrl" alt="Photo of a Shiba Inu">
         <mat-card-content>
-            <p>
-                Satisfaction lies in the constant effort, not the present achievement, and the full effort will surely lead to victory.
-            </p>
+            <p>{{ quoteData.en }}</p>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button type="button">LIKE</button>
