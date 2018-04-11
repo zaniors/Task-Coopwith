@@ -35,7 +35,6 @@ export class LoginComponent implements OnInit {
             .getQuote()
             .subscribe(res => {
                 this.quoteData = res;
-                console.log(res);
             });
     }
 
