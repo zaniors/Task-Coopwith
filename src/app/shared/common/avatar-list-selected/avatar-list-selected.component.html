@@ -1,0 +1,22 @@
+<section>
+    <span>{{ title }}</span>
+    <mat-icon class="avatar" [svgIcon]="selected"></mat-icon>
+</section>
+
+<section class="scroll-container">
+
+    <mat-grid-list cols="6" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let avatar of avatarList">
+            <section class="image-container" (click)="onChange(avatar)">
+                <mat-icon [svgIcon]="avatar" class="avatar"></mat-icon>
+
+                <section class="after">
+                    <span class="zoom">
+                        <mat-icon>checked</mat-icon>
+                    </span>
+                </section>
+            </section>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</section>

@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DirectiveModule } from "../directive/directive.module";
+import { AvatarListSelectedComponent } from './avatar-list-selected/avatar-list-selected.component';
 
 @NgModule({
     imports: [
@@ -30,7 +31,8 @@ import { DirectiveModule } from "../directive/directive.module";
         DirectiveModule,
     ],
     declarations: [
-        ConfirmDialogComponent
+        ConfirmDialogComponent,
+        AvatarListSelectedComponent
     ],
     exports: [
         CommonModule,
@@ -54,6 +56,8 @@ import { DirectiveModule } from "../directive/directive.module";
         MatNativeDateModule,
         MatSelectModule,
         DirectiveModule,
+
+        AvatarListSelectedComponent,
     ],
     entryComponents: [
         ConfirmDialogComponent
